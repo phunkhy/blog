@@ -70,31 +70,6 @@
 <div class="paragraph">
 <p>Then I turned more to software development and when my first child was born my time was very limited and music making was only drumming my Djembe with friends. But now the iPad brought back the fun andf I think that I started a really interesting journey.</p>
 </div>
-<div class="paragraph">
-<p>{% for post in site.posts limit: 5 %}
-&lt;a href=".{{ post.url }}"&gt;{{ post.navtitle }}&lt;/a&gt;
-{% endfor %}</p>
-</div>
-<div class="paragraph">
-<p>{% for category in site.categories %}
-  &lt;h3&gt;{{ category[0] }}&lt;/h3&gt;
-  &lt;ul&gt;
-    {% for post in category[1] %}
-      &lt;li&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-    {% endfor %}
-  &lt;/ul&gt;
-{% endfor %}</p>
-</div>
-<div class="paragraph">
-<p>{% for tag in site.tags %}
-  &lt;h3&gt;{{ tag[0] }}&lt;/h3&gt;
-  &lt;ul&gt;
-    {% for post in tag[1] %}
-      &lt;li&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
-    {% endfor %}
-  &lt;/ul&gt;
-{% endfor %}</p>
-</div>
 </div>
 </div>
 
@@ -113,12 +88,22 @@
             
         </ul>
 
-        <div class="panel">
-            <h5>Featured</h5>
+        <h4>Categories</h4>
+        <ul id="categories" class="posts nav">
+            
+        </ul>
 
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon
-                nulla pork belly cupidatat meatloaf cow.</p>
-        </div>
+        <h4>Tags</h4>
+        <ul id="tags" class="posts nav">
+            
+                <h3>workflow</h3>
+                <ul id="tag.posts" class="posts nav">
+                    
+                    <li><a href="."></a></li>
+                    
+                </ul>
+            
+        </ul>
 
     </aside>
 
