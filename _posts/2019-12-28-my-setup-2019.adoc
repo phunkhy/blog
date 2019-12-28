@@ -1,11 +1,11 @@
 = My Setup 2019
-:title: title
-:showtitle: showtitle
-:page-navtitle: navtitle
+:title: My Setup 2019
+:showtitle: My Setup 2019
+:page-navtitle: My Setup 2019
 :page-excerpt: Excerpt goes here.
 :page-root: ../../../
-:categories: [blog, travel]
-:tags: [hot, summer]
+:page-category: [Setup]
+:page-tags: [workflow]
 
 == Example entry
 
