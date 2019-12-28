@@ -1,8 +1,11 @@
-= First Entry
-:showtitle:
-:page-navtitle: First Entry
+= My Setup 2019
+:title: title
+:showtitle: showtitle
+:page-navtitle: navtitle
 :page-excerpt: Excerpt goes here.
 :page-root: ../../../
+:categories: [blog, travel]
+:tags: [hot, summer]
 
 == Example entry
 

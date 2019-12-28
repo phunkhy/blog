@@ -1,23 +1,21 @@
-= Congratulations!
+= Welcome!
 :showtitle:
-:page-title: Jekyll AsciiDoc Quickstart
-:page-description: A forkable blog-ready Jekyll site using AsciiDoc
+:page-title: phunkhy beats
+:page-description: A blog dedicated to iPad centered music prodction
 
-You've successfully set up and deployed an Jekyll website powered by AsciiDoc using the https://github.com/asciidoctor/jekyll-asciidoc-quickstart[*Jekyll AsciiDoc Quickstart*] project. If everything is in order then changes to the AsciiDoc content will be automatically published to your `gh_pages` branch and hosted via Jekyll and Github.
+This blog is dedicated to music production on an iPad. While my workflows might sometimes includes a laptop, for sure the iPad is in the center and I try to do things on the iPad as much as possible. Why someone wants to limit his tooling to a mobile device with quite limited screen real estate and CPU and memory contraints? 
 
-== What do I do now?
+It all started in 2019 when I installed Garage Band on my first iPad and I was surprised how well it worked and how capable it was. The more I used it to make music the more I noticed that it lets my focus more on the music because I could neither install hundreds of synths and plugins nor using more than a few at once. I tend to rather record than to edit. Moreover I was suddenly so mobile as I do not need much more than the iPad, headphones and my Korg nanoKeys Studio Bluetooth MIDI controller to make music whereever I go.
 
-Now that you've set up your website to run with AsciiDoc, you have a ton of options available to you.
+== About me
 
-=== Edit content
+I was a computer geek from the age of 14 back in the golden age of home computers and I very early liked electronic music like Kraftwerk or Klaus Schulze. I got my first computer in 1983 (http://oldcomputers.net/atari800.html[Atari 800]) and my first synthesizer in 1984 (http://www.vintagesynth.com/korg/770.php[Korg 770]). I never learned an instrument except Djembe drumming but in 1987 my best friend spent the money he inherited on building up a home recording studio. And I was responsible for the computer and synth equipment: http://oldcomputers.net/atari520st.html[Atari ST] running https://www.youtube.com/watch?v=rPXAVGizQSY[Cubase] (MIDI only), http://www.vintagesynth.com/kawai/kawaik1.php[Kawai K1] wavetable synth and a http://www.vintagesynth.com/roland/r8.php[Roland R8] drum machine. We spent countless days and nights in that studio creating tracks, recording musicians. Then in th early 1990s techno music came into my life and heavily influenced me. The Atari ST was soon replaced with a PC running Cubase Audio (with audio tracks) and a Turtle Beach Tropez sound card (hosting a synth capable to play sf2 soundfonts).
 
-Editing content is very simple. The easiest way to update your blog is to clone your repository, fire up your favorite text editor and run the content locally. To do this run the `jekyll serve` command and open a web browser to http://localhost:4000. Jekyll will automatically process and host changes to the content.
+Then I turned more to software development and when my first child was born my time was very limited and music making was only drumming my Djembe with friends. But now the iPad brought back the fun andf I think that I started a relly interesting journey.
 
-You may also edit your content directly on Github. To do this, navigate the browser the file you wish to edit, click the pensil (edit) button in the upper right hand corner of the view and make your changes. When you're finished, commit your changes. This will trigger Travis to generate and publish a new website including your changes.
+=== The blog
 
-For blog posts, Jekyll will recognize files under the `_post` directory, parse the name and place it in the list of posts. These will show up under the `site.posts` variable.
-
-To display a list of posts, use Jekyll syntax similar to the following:
+The idea to start the blog came when I wanted to note down what I found out to memorize it for myself. The same thing I already did for my programming. When I discover something noteworthy why just note it for yourself? Why not share with world? So, that's the reason for this blog. I'll try to structure it with meaningful tags. To be able to easily explain a specific setup I'm using https://plantuml.com/[Plantuml] which is a diagramming tool that I learned to love for software development.
 
 [source, html]
 ----
@@ -25,17 +23,23 @@ To display a list of posts, use Jekyll syntax similar to the following:
 <a href=".{{ post.url }}">{{ post.navtitle }}</a>
 {% endfor %}
 ----
-
-=== Update Look and feel
-
-The layout provided with the https://github.com/asciidoctor/jekyll-asciidoc-quickstart[Jekyll AsciiDoc Quickstart] project is based on http://foundation.zurb.com[Foundation], a responsive design css framework. You're free to update the layout by editing the `_layouts/default.html` file and css under the `css` directory.
-
-//This blog layout is based on the http://foundation.zurb.com/templates-previews-sites-f6/blog.html[Blog template].
-
-=== Reference documentation
-
-The following links will help with detailed explanations on Jekyll and AsciiDoc.
-
-* http://jekyllrb.com[Jekyll]
-* http://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[AsciiDoc Quick Reference]
-* http://asciidoctor.org[Asciidoctor]
+----
+{% for category in site.categories %}
+  <h3>{{ category[0] }}</h3>
+  <ul>
+    {% for post in category[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+----
+----
+{% for tag in site.tags %}
+  <h3>{{ tag[0] }}</h3>
+  <ul>
+    {% for post in tag[1] %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+----
