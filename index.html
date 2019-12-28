@@ -51,10 +51,11 @@
 <div class="paragraph">
 <p>It all started in 2019 when I installed Garage Band on my first iPad and I was surprised how well it worked and how capable it was. The more I used it to make music the more I noticed that it lets my focus more on the music because I could neither install hundreds of synths and plugins nor using more than a few at once. I tend to rather record than to edit. Moreover I was suddenly so mobile as I do not need much more than the iPad, headphones and my Korg nanoKeys Studio Bluetooth MIDI controller to make music whereever I go.</p>
 </div>
-<div class="paragraph">
-<p>|
-== The blog</p>
 </div>
+</div>
+<div class="sect1">
+<h2 id="the_blog">The Blog</h2>
+<div class="sectionbody">
 <div class="paragraph">
 <p>The idea to start the blog came when I wanted to note down what I found out to memorize it for myself. The same thing I already did for my programming. When I discover something noteworthy why just note it for yourself? Why not share with world? So, that&#8217;s the reason for this blog. I&#8217;ll try to structure it with meaningful tags. To be able to easily explain a specific setup I&#8217;m using <a href="https://plantuml.com/">Plantuml</a> which is a diagramming tool that I learned to love for software development.</p>
 </div>
@@ -67,38 +68,32 @@
 <p>I was a computer geek from the age of 14 back in the golden age of home computers and I very early liked electronic music like Kraftwerk or Klaus Schulze. I got my first computer in 1983 (<a href="http://oldcomputers.net/atari800.html">Atari 800</a>) and my first synthesizer in 1984 (<a href="http://www.vintagesynth.com/korg/770.php">Korg 770</a>). I never learned an instrument except Djembe drumming but in 1987 my best friend spent the money he inherited on building up a home recording studio. And I was responsible for the computer and synth equipment: <a href="http://oldcomputers.net/atari520st.html">Atari ST</a> running <a href="https://www.youtube.com/watch?v=rPXAVGizQSY">Cubase</a> (MIDI only), <a href="http://www.vintagesynth.com/kawai/kawaik1.php">Kawai K1</a> wavetable synth and a <a href="http://www.vintagesynth.com/roland/r8.php">Roland R8</a> drum machine. We spent countless days and nights in that studio creating tracks, recording musicians. Then in th early 1990s techno music came into my life and heavily influenced me. The Atari ST was soon replaced with a PC running Cubase Audio (with audio tracks) and a Turtle Beach Tropez sound card (hosting a synth capable to play sf2 soundfonts).</p>
 </div>
 <div class="paragraph">
-<p>Then I turned more to software development and when my first child was born my time was very limited and music making was only drumming my Djembe with friends. But now the iPad brought back the fun andf I think that I started a relly interesting journey.</p>
+<p>Then I turned more to software development and when my first child was born my time was very limited and music making was only drumming my Djembe with friends. But now the iPad brought back the fun andf I think that I started a really interesting journey.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html">{% for post in site.posts limit: 5 %}
-<span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">.{{ post.url }}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{ post.navtitle }}<span class="tag">&lt;/a&gt;</span>
-{% endfor %}</code></pre>
+<div class="paragraph">
+<p>{% for post in site.posts limit: 5 %}
+&lt;a href=".{{ post.url }}"&gt;{{ post.navtitle }}&lt;/a&gt;
+{% endfor %}</p>
 </div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html">{% for category in site.categories %}
-  <span class="tag">&lt;h3&gt;</span>{{ category[0] }}<span class="tag">&lt;/h3&gt;</span>
-  <span class="tag">&lt;ul&gt;</span>
+<div class="paragraph">
+<p>{% for category in site.categories %}
+  &lt;h3&gt;{{ category[0] }}&lt;/h3&gt;
+  &lt;ul&gt;
     {% for post in category[1] %}
-      <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">{{ post.url }}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{ post.title }}<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+      &lt;li&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
     {% endfor %}
-  <span class="tag">&lt;/ul&gt;</span>
-{% endfor %}</code></pre>
+  &lt;/ul&gt;
+{% endfor %}</p>
 </div>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="html">{% for tag in site.tags %}
-  <span class="tag">&lt;h3&gt;</span>{{ tag[0] }}<span class="tag">&lt;/h3&gt;</span>
-  <span class="tag">&lt;ul&gt;</span>
+<div class="paragraph">
+<p>{% for tag in site.tags %}
+  &lt;h3&gt;{{ tag[0] }}&lt;/h3&gt;
+  &lt;ul&gt;
     {% for post in tag[1] %}
-      <span class="tag">&lt;li&gt;</span><span class="tag">&lt;a</span> <span class="attribute-name">href</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">{{ post.url }}</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>{{ post.title }}<span class="tag">&lt;/a&gt;</span><span class="tag">&lt;/li&gt;</span>
+      &lt;li&gt;&lt;a href="{{ post.url }}"&gt;{{ post.title }}&lt;/a&gt;&lt;/li&gt;
     {% endfor %}
-  <span class="tag">&lt;/ul&gt;</span>
-{% endfor %}</code></pre>
-</div>
+  &lt;/ul&gt;
+{% endfor %}</p>
 </div>
 </div>
 </div>
@@ -114,7 +109,7 @@
         <h4>Posts</h4>
         <ul id="posts" class="posts nav">
             
-            <li><a href="./2019/12/28/my-setup-2019.html">navtitle</a></li>
+            <li><a href="./2019/12/28/my-setup-2019.html">My Setup 2019</a></li>
             
         </ul>
 
