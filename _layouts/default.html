@@ -59,12 +59,29 @@
             {% endfor %}
         </ul>
 
-        <div class="panel">
-            <h5>Featured</h5>
+        <h4>Categories</h4>
+        <ul id="categories" class="posts nav">
+            {% for category in site.categories %}
+                <h3>{{ category[0] }}</h3>
+                <ul id="cat.posts" class="posts nav">
+                    {% for posts in category[1] %}
+                    <li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
 
-            <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon
-                nulla pork belly cupidatat meatloaf cow.</p>
-        </div>
+        <h4>Tags</h4>
+        <ul id="tags" class="posts nav">
+            {% for tags in site.tags %}
+                <h3>{{ tags[0] }}</h3>
+                <ul id="tag.posts" class="posts nav">
+                    {% for posts in tags[1] %}
+                    <li><a href=".{{ post.url }}">{{ post.navtitle }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </ul>
 
     </aside>
 

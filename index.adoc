@@ -16,29 +16,3 @@ The idea to start the blog came when I wanted to note down what I found out to m
 I was a computer geek from the age of 14 back in the golden age of home computers and I very early liked electronic music like Kraftwerk or Klaus Schulze. I got my first computer in 1983 (http://oldcomputers.net/atari800.html[Atari 800]) and my first synthesizer in 1984 (http://www.vintagesynth.com/korg/770.php[Korg 770]). I never learned an instrument except Djembe drumming but in 1987 my best friend spent the money he inherited on building up a home recording studio. And I was responsible for the computer and synth equipment: http://oldcomputers.net/atari520st.html[Atari ST] running https://www.youtube.com/watch?v=rPXAVGizQSY[Cubase] (MIDI only), http://www.vintagesynth.com/kawai/kawaik1.php[Kawai K1] wavetable synth and a http://www.vintagesynth.com/roland/r8.php[Roland R8] drum machine. We spent countless days and nights in that studio creating tracks, recording musicians. Then in th early 1990s techno music came into my life and heavily influenced me. The Atari ST was soon replaced with a PC running Cubase Audio (with audio tracks) and a Turtle Beach Tropez sound card (hosting a synth capable to play sf2 soundfonts).
 
 Then I turned more to software development and when my first child was born my time was very limited and music making was only drumming my Djembe with friends. But now the iPad brought back the fun andf I think that I started a really interesting journey.
-
-
-{% for post in site.posts limit: 5 %}
-<a href=".{{ post.url }}">{{ post.navtitle }}</a>
-{% endfor %}
-
-
-{% for category in site.categories %}
-  <h3>{{ category[0] }}</h3>
-  <ul>
-    {% for post in category[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
-
-
-
-{% for tag in site.tags %}
-  <h3>{{ tag[0] }}</h3>
-  <ul>
-    {% for post in tag[1] %}
-      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-    {% endfor %}
-  </ul>
-{% endfor %}
